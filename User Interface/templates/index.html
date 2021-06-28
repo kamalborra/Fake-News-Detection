@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="u">
+        <form method="post" action="/" enctype="multipart/form-data">
+            <h1>Fake News Detection</h1>
+            <p class="border-bottom"></p>
+            <p class="body">
+                {% with messages = get_flashed_messages() %} {% if messages %}
+                <div class="lastpage"><label class="news1">{{ messages[1] }}</label></div>
+                <p class="message">
+                    {{ messages[0] }}
+                </p>
+            </p>
+            <p class="border-top"></p>
+            {% endif %} {% if not messages %}
+            <textarea class="news" name="textarea" placeholder="Enter news to detect" required></textarea></p>
+            <p class="border-top"></p>
+            <p class="center"><input type="submit" class="b" value="Submit" /></p>
+            {% endif %} {% endwith %}
+
+
+            </p>
+        </form>
+    </div>
+
+</body>
+
+</html>
